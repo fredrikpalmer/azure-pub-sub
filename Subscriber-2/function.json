@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "name": "topicItem",
+      "type": "serviceBusTrigger",
+      "direction": "in",
+      "topicName": "az-pubsub-topic",
+      "subscriptionName": "az-pubsub-subscription-2",
+      "connection": "CONNECTION_STRING"
+    }
+  ]
+}

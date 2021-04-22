@@ -1,6 +1,6 @@
 module.exports = async function (context, myTimer) {
     const item = {
-        id: 1,
+        id: Math.floor(Math.random()*10),
         msg: "Hello world",
         date: new Date()
     }

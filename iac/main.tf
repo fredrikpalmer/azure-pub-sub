@@ -28,8 +28,17 @@ resource "azurerm_servicebus_topic" "topic" {
   resource_group_name = azurerm_resource_group.resource_group.name
 }
 
-resource "azurerm_servicebus_subscription" "subscription" {
-  name = "az-pubsub-subscription"
+resource "azurerm_servicebus_subscription" "subscription_1" {
+  name = "az-pubsub-subscription-1"
+  namespace_name = azurerm_servicebus_namespace.namespace.name
+  resource_group_name = azurerm_resource_group.resource_group.name
+  topic_name = azurerm_servicebus_topic.topic.name
+  max_delivery_count = 10
+  dead_lettering_on_message_expiration = true
+}
+
+resource "azurerm_servicebus_subscription" "subscription_2" {
+  name = "az-pubsub-subscription-2"
   namespace_name = azurerm_servicebus_namespace.namespace.name
   resource_group_name = azurerm_resource_group.resource_group.name
   topic_name = azurerm_servicebus_topic.topic.name
