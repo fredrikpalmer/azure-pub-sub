@@ -1,0 +1,19 @@
+{
+  "bindings": [
+      {
+          "schedule": "0/15 * * * * *",
+          "name": "outputSbTopicTimer",
+          "runsOnStartup": true,
+          "type": "timerTrigger",
+          "direction": "in"
+      },
+      {
+          "name": "outputSbTopic",
+          "type": "serviceBus",
+          "topicName": "az-pubsub-topic",
+          "connection": "CONNECTION_STRING",
+          "direction": "out"
+      }
+  ],
+  "disabled": false
+}
